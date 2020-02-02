@@ -11,8 +11,8 @@ from sklearn.preprocessing import StandardScaler
 
 x = np.random.uniform(1, 10, size=100)
 y = x * 2 + np.random.normal(1, 2.5, size=100)
-# plt.scatter(y, x)
-# plt.show()
+plt.scatter(y, x)
+plt.show()
 
 df = pd.DataFrame({"X": x, "Y": y})
 
@@ -36,10 +36,10 @@ for train_indices, test_indices in kfold.split(df):
 	Y_pred = model.predict(X_test)
 
 	r2_scores.append(r2_score(Y_test, Y_pred))
-	# print("mean_squared_error: ", mean_squared_error(Y_test, Y_pred))
-	# print("mean_absolute_error: ", mean_absolute_error(Y_test, Y_pred))
-	# print("model.coef_: ", model.coef_)
-	# print("model.intercept_: ", model.intercept_)
+	print("mean_squared_error: ", mean_squared_error(Y_test, Y_pred))
+	print("mean_absolute_error: ", mean_absolute_error(Y_test, Y_pred))
+	print("model.coef_: ", model.coef_)
+	print("model.intercept_: ", model.intercept_)
 	mean_errors.append(mean_absolute_error(Y_test, Y_pred))
 
 print("Mean r2 ", np.mean(r2_scores))
