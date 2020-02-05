@@ -16,6 +16,7 @@ len_alphabets = len(alphabets)
 seq_len = 4
 stride = 1
 
+# Generate sequences
 words = list()
 labels = list()
 for i in range(0, len(alphabets) - seq_len, stride):
@@ -32,7 +33,6 @@ for i in range(num_sequences):
 	for j in range(seq_len):
 		X[i][j][alphabets_indices[words[i][j]]] = 1
 	Y[i][alphabets_indices[labels[i]]] = 1
-
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
