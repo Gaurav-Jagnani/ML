@@ -3,6 +3,8 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+import seaborn as sns
+sns.set()
 
 from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
